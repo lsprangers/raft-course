@@ -6,6 +6,9 @@ This was a course taken with coworkers and peers to strengthen our software desi
 ## Goal
 The goal of the course was to create a working implementation of [the raft paper](https://raft.github.io/), and then to use it to create a strongly consistent replicated K-V Store powering a web app
 
+### Use Cases
+The use cases in the wild today are mostly for configuration K-V stores like etcd, DNS, or other systems which require strong consistency over availability 
+
 #### Partitioned K-V Store
 The setup below depicts a hypothetical structure of a web app powered by a partitioned, distributed, strongly consistent (not necessarily always available) K-V Store
 ![alt text](./QuickNDirty.png)
@@ -18,6 +21,3 @@ At this point we use hardcoded `localhost` values with ports for our nodes for t
 
 #### Autoscaling
 Our RAFT cluster does not autoscale, and sits with 2 or 4 replicas, meaning 3 or 5 nodes altogether, for our K-V store
-
-### Use Cases
-The use cases in the wild today are mostly for configuration K-V stores like etcd, DNS, or other systems which require strong consistency over availability 
