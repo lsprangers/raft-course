@@ -9,7 +9,7 @@ from socket import socket, AF_INET, SOCK_STREAM
 from resources.socketInterface import SocketInterface
 from resources.raftConfig import raftConfig
 from resources.messageInterface import *
-1
+
 
 def get_leader():
     leader_node_id = input("Who is leader? >")
