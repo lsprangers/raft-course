@@ -30,7 +30,7 @@ A major point I didn't understand was serving reads from RAFT followers.
 Followers were mostly meant to ensure fault tolerance and high availability, but we have all of these 
 replicas getting sent information...there must be a way to use the up to date ones for reads
 
-Some implementations have figured out how to do this, but it requires another check between the follower accepting
+[This paper descibes an implementation](https://www.usenix.org/system/files/conference/hotcloud17/hotcloud17-paper-arora.pdf#:~:text=Since%20writes%20are%20not%20guaran%2D%20teed%20to,are%20han%2D%20dled%20only%20by%20the%20leader.) to do this, but it requires another check between the follower accepting
 the user request and the leader to ensure their `lastCommitIdx` and `termNo` are the same - i.e. that is has the latest data
 
 #### DNS
