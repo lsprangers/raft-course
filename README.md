@@ -14,6 +14,13 @@ The use cases in the wild today are mostly for configuration K-V stores like etc
 ## Goal
 The goal of the course was to create a working implementation of [the raft paper](https://raft.github.io/), and then to use it to create a strongly consistent replicated K-V Store powering a web app
 
+### Use Cases
+The use cases in the wild today are mostly for configuration K-V stores like etcd, DNS, or other systems which require strong consistency over availability 
+
+#### Partitioned K-V Store
+The setup below depicts a hypothetical structure of a web app powered by a partitioned, distributed, strongly consistent (not necessarily always available) K-V Store
+![alt text](./QuickNDirty.png)
+
 ### Implementation
 The majority of the focus was on creating a configurable RAFT cluster that could be wrapped into a Docker image and deployed on a private network. This cluster should have a bootstrapped leader node, and then after that become a self healing cluster with strong consistency.
 
